@@ -33,14 +33,15 @@ function PlayFizzBuzz(range) {
     var printer = "";
 
     for (var i = 1; i <= range; i++) {
-        if (i % 3 === 0) {
+
+        if (i % 3 === 0 && i % 5 !== 0) {
             printer += " " + fizz;
-        } else if (i % 5 === 0) {
+        } else if (i % 5 === 0 && i % 3 !== 00) {
             printer += " " + buzz;
-        } else if (i % 3 !== 0 && i % 5 !== 0) {
-            printer += " " + i;
         } else if (i % 3 === 0 && i % 5 === 0) {
             printer += " " + fizzBuzz;
+        } else {
+            printer += " " + i;
         }
     }
     return printer;
