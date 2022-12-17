@@ -11,7 +11,7 @@ var resetButton = document.querySelector(".btn-secondary");
 var lotteryNumbers = document.querySelectorAll(".number");
 
 function generateNumbers(max) {
-    max = 9;
+    max = 99;
     for (var number of lotteryNumbers) {
         number.innerText = Math.floor(Math.random() * max);
     }
