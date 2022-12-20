@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+}
+.timer {
+    width: 100%;
+    height: 90vh;
+    background-color: #4a8fdf;
+}
+.timer__body {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.timer__controls {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+.timer__count {
+    font-size: 45px;
+}
+
+.controls__start,
+.controls__reset {
+    width: 23%;
+    height: 45px;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+}
+.controls__start:hover,
+.controls__reset:hover {
+    cursor: pointer;
+}
+.controls__start {
+    background-color: lime;
+    margin-right: 15px;
+}
+.controls__reset {
+    background-color: orange;
+}
