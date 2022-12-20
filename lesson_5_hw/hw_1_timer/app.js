@@ -14,22 +14,16 @@ var seconds = 3;
 var interval;
 
 function startCountdown() {
-    if (seconds >= 1) {
-        seconds--;
-        appendSeconds.innerHTML = seconds;
-    } else if (seconds <= 0) {
-        clearInterval(interval);
-    }
-}
-
-function resetCountdown() {
-    clearInterval(interval);
-    seconds = 3;
-    appendSeconds.innerHTML = seconds;
+    seconds >= 1
+      ? seconds-- && (appendSeconds.innerHTML = seconds)
+      : clearInterval(interval);
 }
 
 start.addEventListener('click', () => {
     clearInterval(interval);
     interval = setInterval(startCountdown, 1000);
 });
-reset.addEventListener('click', resetCountdown);
+reset.addEventListener('click', () => {
+    clearInterval(interval);
+    (seconds = 3) && (appendSeconds.innerHTML = seconds);
+});
