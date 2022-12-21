@@ -10,7 +10,7 @@ var start = document.querySelector(".controls__start");
 var reset = document.querySelector(".controls__reset");
 
 var appendSeconds = document.querySelector(".timer__count");
-var seconds = 3;
+var seconds = 60;
 var interval;
 
 function startCountdown() {
@@ -25,5 +25,5 @@ start.addEventListener('click', () => {
 });
 reset.addEventListener('click', () => {
     clearInterval(interval);
-    (seconds = 3) && (appendSeconds.innerHTML = seconds);
+    (seconds = 60) && (appendSeconds.innerHTML = seconds);
 });
