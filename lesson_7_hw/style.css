@@ -1,0 +1,38 @@
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.input {
+    margin: 15px 0;
+    width: 80%;
+}
+ul {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+ul li {
+    outline: 2px solid purple;
+    border-radius: 20px;
+    width: 30%;
+    height: 50px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.note {
+    width: 80%;
+    margin-top: 15px;
+    padding: 20px;
+    height: auto;
+    outline: 2px solid limegreen;
+    border-radius: 30px;
+    text-align: center;
+}
