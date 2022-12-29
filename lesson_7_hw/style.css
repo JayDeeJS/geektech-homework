@@ -27,7 +27,10 @@ ul li {
     justify-content: center;
     align-items: center;
 }
-.note {
+ul li:hover {
+    cursor: pointer;
+}
+.result {
     width: 80%;
     margin-top: 15px;
     padding: 20px;

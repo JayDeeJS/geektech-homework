@@ -52,76 +52,138 @@ console.log("hELlo thErE".capitalizeString());
 */
 
 //Код решения
-var noteListJSON = `{
-    "January": ["fix the door", "call a dentist"],
-    "February": "buy books",
-    "March": "throw a party",
-    "April": "go hiking",
-    "May": "see a doctor",
-    "June": "try ice climbing",
-    "July": "help stranger",
-    "August": "try base jumping",
-    "September": "buy a car",
-    "October": "celebrate Halloween",
-    "November": "celebrate Halloween again",
-    "December": "spend Christmas with friends"
-}`
+var monthListJSON = `[
+    {
+        "id": 1,
+        "January": "fix the door"
+    },
+    {
+        "id": 2,
+        "February": "buy books"
+    },
+    {
+        "id": 3,
+        "March": "throw a party"
+    },
+    {
+        "id": 4,
+        "April": "go hiking"
+    },
+    {
+        "id": 5,
+        "May": "see a doctor"
+    },
+    {
+        "id": 6,
+        "June": "try ice climbing"
+    },
+    {
+        "id": 7,
+        "July": "help stranger"
+    },
+    {
+        "id": 8,
+        "August": "try base jumping"
+    },
+    {
+        "id": 9,
+        "September": "buy a car"
+    },
+    {
+        "id": 10,
+        "October": "celebrate Halloween"
+    },
+    {
+        "id": 11,
+        "November": "celebrate Halloween again"
+    },
+    {
+        "id": 12,
+        "December": "spend Christmas with friends"
+    }
+]`
 
-var noteList = JSON.parse(noteListJSON);
-console.log(noteList);
+var monthList = JSON.parse(monthListJSON);
 
-var noteInput = document.querySelector(".input");
-noteInput.addEventListener("keydown", function (event) {
-    console.log(event.target.value);
-});
+function MonthsObject(id, month) {
+    this.Id = id;
+    this.Month = month;
+}
+
+var months = [
+    new MonthsObject(monthList[0].id, monthList[0].January),
+    new MonthsObject(monthList[1].id, monthList[1].February),
+    new MonthsObject(monthList[2].id, monthList[2].March),
+    new MonthsObject(monthList[3].id, monthList[3].April),
+    new MonthsObject(monthList[4].id, monthList[4].May),
+    new MonthsObject(monthList[5].id, monthList[5].June),
+    new MonthsObject(monthList[6].id, monthList[6].July),
+    new MonthsObject(monthList[7].id, monthList[7].August),
+    new MonthsObject(monthList[8].id, monthList[8].September),
+    new MonthsObject(monthList[9].id, monthList[9].October),
+    new MonthsObject(monthList[10].id, monthList[10].November),
+    new MonthsObject(monthList[11].id, monthList[11].December),
+]
+console.log(months);
+
+var containerNode = document.querySelector(".result");
+var inputNode = document.querySelector(".input");
+
 var monthNodes = document.querySelectorAll(".month");
-var display = document.querySelector(".note");
+for (const monthNode of monthNodes) {
+    console.log(monthNode.innerHTML);
 
-for (var monthNode of monthNodes) {
-    monthNode.addEventListener("click", function (event) {
-        console.log(event.target.innerHTML.toString());
-
-        var key = event.target.innerHTML.toString();
-        switch (key) {
+    monthNode.addEventListener("click", function () {
+        switch (monthNode.innerHTML) {
             case "January":
-                display.textContent = noteList.January;
+                containerNode.textContent = `${monthList[0].January}`;
                 break;
             case "February":
-                display.textContent = noteList.February;
+                containerNode.textContent = monthList[1].February;
+                monthNode.classList.toggle("active");
                 break;
             case "March":
-                display.textContent = noteList.March;
+                containerNode.textContent = monthList[2].March;
+                monthNode.classList.toggle("active");
                 break;
             case "April":
-                display.textContent = noteList.April;
+                containerNode.textContent = monthList[3].April;
+                monthNode.classList.toggle("active");
                 break;
             case "May":
-                display.textContent = noteList.May;
+                containerNode.textContent = monthList[4].May;
+                monthNode.classList.toggle("active");
                 break;
             case "June":
-                display.textContent = noteList.June;
+                containerNode.textContent = monthList[5].June;
+                monthNode.classList.toggle("active");
                 break;
             case "July":
-                display.textContent = noteList.July;
+                containerNode.textContent = monthList[6].July;
+                monthNode.classList.toggle("active");
                 break;
             case "August":
-                display.textContent = noteList.August;
+                containerNode.textContent = monthList[7].August;
+                monthNode.classList.toggle("active");
                 break;
             case "September":
-                display.textContent = noteList.September;
+                containerNode.textContent = monthList[8].September;
+                monthNode.classList.toggle("active");
                 break;
             case "October":
-                display.textContent = noteList.October;
+                containerNode.textContent = monthList[9].October;
+                monthNode.classList.toggle("active");
                 break;
             case "November":
-                display.textContent = noteList.November;
+                containerNode.textContent = monthList[10].November;
+                monthNode.classList.toggle("active");
                 break;
             case "December":
-                display.textContent = noteList.December;
+                containerNode.textContent = monthList[11].December;
+                monthNode.classList.toggle("active");
                 break;
             default:
                 break;
         }
     })
-
 }
